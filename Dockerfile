@@ -8,7 +8,9 @@ WORKDIR /app
 RUN pip install biopython pandas numpy tqdm
 
 # Copy application code
-COPY enzymenet /app/enzymenet
+COPY . /app
+
+RUN pip install .
 
 ENTRYPOINT ["python", "-m", "enzymenet"]
 

@@ -13,3 +13,4 @@ enzymenet = "enzymenet_cli.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["cli"]
+include = ["enzymenet"]

@@ -42,12 +42,13 @@ def main():
 
     cmd = [
         "docker", "run", "--rm",
-        "-v", f"{os.path.dirname(input_path)}:/app",
+        "-v", f"{os.path.dirname(input_path)}:/app/input",
+        "-v", f"{os.path.dirname(output_path)}:/app/output",
         "-v", f"{MODEL_DIR}:/root/.enzymenet/model",
         *gpu_flag,
         IMAGE,
-        "/app/" + os.path.basename(input_path),
-        "/app/" + os.path.basename(output_path),
+        "/app/input/" + os.path.basename(input_path),
+        "/app/output/" + os.path.basename(output_path),
     ]
 
     subprocess.run(cmd)
