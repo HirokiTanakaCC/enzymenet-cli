@@ -1,0 +1,40 @@
+services:
+  enzymenet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # Volume mounts
+    volumes:
+      # Model directory (mount from host if not included in image)
+      - ~/.enzymenet/model:/root/.enzymenet/model
+    
+    # Working directory
+    working_dir: /app
+    
+    # Interactive terminal
+    stdin_open: true
+    tty: true
+    
+    # Environment variables
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TF_CPP_MIN_LOG_LEVEL=2
+    
+    # Resource limits
+    # Uncomment to set limits:
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '4'
+    #       memory: 16G
+    
+    # Restart policy
+    restart: "no"
+
+  # Optional: GPU info service (comment out if not needed)
+  # gpu-check:
+  #   image: nvidia/cuda:11.0-base
+  #   runtime: nvidia
+  #   command: nvidia-smi
+  #   profiles: ["debug"]
