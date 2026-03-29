@@ -104,6 +104,34 @@ tanakahiroki1989/enzymenet:ver1.0
 
 ---
 
+## 📄 Reference
+
+If you use this tool in your research, please cite:
+
+Watanabe N, Yamamoto M, Murata M, Kuriya Y, Araki M (2023)  
+*EnzymeNet: residual neural networks model for Enzyme Commission number prediction*  
+Bioinformatics Advances  
+https://doi.org/10.1093/bioadv/vbad173
+
+<details>
+<summary>BibTeX</summary>
+
+```bibtex
+@article{watanabe2023enzymenet,
+  title={EnzymeNet: residual neural networks model for Enzyme Commission number prediction},
+  author={Watanabe, Naoki and Yamamoto, Masaki and Murata, Masahiro and Kuriya, Yuki and Araki, Michihiro},
+  journal={Bioinformatics Advances},
+  volume={3},
+  number={1},
+  pages={vbad173},
+  year={2023},
+  doi={10.1093/bioadv/vbad173}
+}
+```
+</details>
+
+---
+
 ## ❗ Notes
 
 * Docker must be running
