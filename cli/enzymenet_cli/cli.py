@@ -37,17 +37,16 @@ def main():
 
     input_path = os.path.abspath(args.input_file)
     output_path = os.path.abspath(args.output)
-
     gpu_flag = ["--gpus", "all"] if args.gpu else []
 
     cmd = [
         "docker", "run", "--rm",
-        "-v", f"{os.path.dirname(input_path)}:/app/input",
+        "-v", f"{input_path}:/app/input.fasta",
         "-v", f"{os.path.dirname(output_path)}:/app/output",
         "-v", f"{MODEL_DIR}:/root/.enzymenet/model",
         *gpu_flag,
         IMAGE,
-        "/app/input/" + os.path.basename(input_path),
+        "/app/input.fasta",
         "/app/output/" + os.path.basename(output_path),
     ]
 

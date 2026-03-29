@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "enzymenet-cli"
-version = "0.1.0"
+version = "0.1.3"
 description = "CLI for running EnzymeNet via Docker"
 dependencies = []
 
@@ -13,4 +13,4 @@ enzymenet = "enzymenet_cli.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["cli"]
-include = ["enzymenet"]
+include = ["enzymenet*"]
