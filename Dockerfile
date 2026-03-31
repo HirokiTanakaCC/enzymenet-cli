@@ -5,7 +5,7 @@ FROM tensorflow/tensorflow:2.1.0-gpu-py3
 WORKDIR /app
 
 # Copy requirements and install Python dependencies
-RUN pip install biopython pandas numpy tqdm
+RUN pip install biopython pandas numpy tqdm huggingface_hub
 
 # Copy application code
 COPY . /app
