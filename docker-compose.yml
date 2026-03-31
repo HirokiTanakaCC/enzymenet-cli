@@ -2,7 +2,9 @@ services:
   enzymenet:
     build:
       context: .
-      dockerfile: Dockerfile
+    container_name: enzymenet
+    entrypoint: []
+    command: tail -f /dev/null
     
     # Volume mounts
     volumes:

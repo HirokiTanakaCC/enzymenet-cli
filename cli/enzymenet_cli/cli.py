@@ -3,6 +3,7 @@ import subprocess
 import os
 import shutil
 import sys
+from huggingface_hub import snapshot_download
 
 IMAGE = "tanakahiroki1989/enzymenet:ver1.0"
 MODEL_DIR = os.path.expanduser("~/.enzymenet/model")
@@ -16,13 +17,12 @@ def ensure_model():
     if os.path.exists(MODEL_DIR):
         return
 
-    os.makedirs(MODEL_DIR, exist_ok=True)
+    os.makedirs(os.path.dirname(MODEL_DIR), exist_ok=True)
 
-    subprocess.run([
-        "git", "clone",
-        "https://huggingface.co/nao653137/EnzymeNet_base",
-        MODEL_DIR
-    ])
+    snapshot_download(
+        repo_id="nao653137/EnzymeNet_base",
+        local_dir=MODEL_DIR
+    )
 
 def main():
     parser = argparse.ArgumentParser()

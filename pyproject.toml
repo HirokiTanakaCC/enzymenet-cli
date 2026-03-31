@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "enzymenet-cli"
-version = "0.2.0"
+version = "0.2.1"
 description = "CLI for running EnzymeNet via Docker"
-dependencies = []
+dependencies = ["huggingface_hub"]
 readme = "README_pypi.md"
 
 [project.scripts]
